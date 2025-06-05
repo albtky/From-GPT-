@@ -1,12 +1,11 @@
-using System;
+using Api;
 
-namespace Api
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("API startup placeholder");
-        }
-    }
-}
+var builder = WebApplication.CreateBuilder(args);
+
+var app = builder.Build();
+
+app.UseMiddleware<GlobalExceptionMiddleware>();
+
+app.MapWeatherEndpoints();
+
+app.Run();
