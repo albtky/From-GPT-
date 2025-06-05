@@ -2,7 +2,9 @@ using MediatR;
 
 namespace Features.Weather
 {
-    public class GetWeatherForecast : IRequest<IEnumerable<WeatherForecast>>
+    // Query definition for retrieving weather forecasts. Returns a collection
+    // of data transfer objects that will be mapped from domain entities.
+    public class GetWeatherForecast : IRequest<IEnumerable<WeatherDto>>
     {
     }
 }
